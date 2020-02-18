@@ -301,6 +301,18 @@ input          TD_CLK27;            //	TV Decoder 27MHz CLK
 ////////////////////////	GPIO	////////////////////////////////
 inout	[35:0]	GPIO_0;					//	GPIO Connection 0
 inout	[35:0]	GPIO_1;					//	GPIO Connection 1
-  
+
+	Instruction_Decode ID(
+		//INPUTS
+		.Branch_Tacken(Branch_Tacken),
+		.Hazard(Hazard),
+		.Branch_Address(Branch_Address),
+		//OUTPUTS
+		.PC0(PC0),
+	);
+	Instruction_Fetch IF(
+		.PC1(PC1),
+	);
+
 endmodule
 
