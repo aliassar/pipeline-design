@@ -1,7 +1,7 @@
 module ID_Stage_Reg (
   input clk, rst,
   input[31:0] PCIn,
-  output reg[31:0] PC,
+  output reg[31:0] PC
   );
   always @ (posedge clk) begin
     if (rst) begin

@@ -1,6 +1,6 @@
 module IF_Stage_Reg (
   input clk, rst, freeze, flush, 
-  input[31:0] PCIn, Instrution_in, 
+  input[31:0] PCIn, Instruction_in, 
   output reg[31:0] PC, Instruction
   );
   always @ (posedge clk) begin
@@ -10,7 +10,7 @@ module IF_Stage_Reg (
     end
     else begin
       PC <= PCIn;
-      {Instruction} <= Instruction_in;
+      Instruction <= Instruction_in;
     end
   end
 endmodule

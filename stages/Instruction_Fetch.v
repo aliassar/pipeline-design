@@ -7,7 +7,7 @@ endmodule
 
 module PCAdder (
   input[31:0] pc_in, number,
-  output[31:0] pc,
+  output[31:0] pc
   );
   wire carry;
   assign {carry, pc} = pc_in + number;
@@ -15,18 +15,20 @@ endmodule
 
 module InstructionMemory (
   input[31:0] pc,
-  output[31:0] instruction,
+  output reg[31:0] instruction
   );
-  case (pc)
- 	  32'd0:  instruction <= 32'b000000_00001_00010_00000_00000000000;
-    32'd4:  instruction <= 32'b000000_00011_00010_00000_00000000000;
-    32'd8:  instruction <= 32'b000000_00101_00010_00000_00000000000;
-    32'd12:  instruction <= 32'b000000_00111_00010_00000_00000000000;
-    32'd16:  instruction <= 32'b000000_01001_00010_00000_00000000000;
-    32'd20:  instruction <= 32'b000000_01011_00010_00000_00000000000;
-    32'd24:  instruction <= 32'b000000_01101_00010_00000_00000000000;
-		default: instruction <= 32'b000000_01111_00010_00000_00000000000;
-	endcase 
+  always @(*) begin
+    case (pc)
+      32'd0:  instruction <= 32'b00000000001000100000000000000000;
+      32'd4:  instruction <= 32'b00000000011000100000000000000000;
+      32'd8:  instruction <= 32'b00000000101000100000000000000000;
+      32'd12:  instruction <= 32'b00000000111000100000000000000000;
+      32'd16:  instruction <= 32'b00000001001000100000000000000000;
+      32'd20:  instruction <= 32'b00000001011000100000000000000000;
+      32'd24:  instruction <= 32'b00000001101000100000000000000000;
+      default: instruction <= 32'b00000001111000100000000000000000;
+    endcase 
+  end
 endmodule
 
 module PCReg (
@@ -34,12 +36,15 @@ module PCReg (
   input[31:0] pc_in,
   output reg[31:0] pc
   );
-  pc <= 1'b0
+  initial begin
+    pc <= 1'b0;
+  end
+  
   always @ (posedge clk) begin
     if (rst) begin
       pc <= 32'b0;
     end
-    else if !(freeze) begin
+    else if (freeze == 1'b0) begin
       pc <= pc_in;
     end
   end
@@ -54,27 +59,27 @@ module IF_Stage (
   wire[31:0] selected_pc;
   wire[31:0] current_pc;
   
-  PCReg PC(
+  PCReg PC_Reg(
   .clk(clk), .rst(rst), .freeze(freeze),
   .pc_in(selected_pc),
-  .pc(current_pc),
+  .pc(current_pc)
   );
   
   PCMux Mux(
   .sel(Branch_token),
   .pc_in(current_pc), .jmp_in(BranchAddr),
-  .pc(selected_pc),
+  .pc(selected_pc)
   );
   
   wire[31:0] next_pc;
   PCAdder Adder(
 		.pc_in(current_pc), .number(32'd4),
-    .pc(next_pc),
+    .pc(next_pc)
 	);
 	
 	InstructionMemory InsMem(
 		.pc(current_pc),
-    .instruction(Instruction),
+    .instruction(Instruction)
 	);
 	
 	assign PC = current_pc;

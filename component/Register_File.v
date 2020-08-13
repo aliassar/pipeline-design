@@ -6,10 +6,13 @@ module RegisterFile (
   output[31:0] reg1, reg2
 );
   reg[31:0] registers [14:0];
-  for(int i = 0; i < 15; i += 1) begin
-    registers[i] = i;
+  integer i;
+  initial begin
+    for(i = 0; i < 15; i = i + 1) begin
+      registers[i] = i;
+    end
   end
-  // initial
+  
   assign reg1 = registers[src1];
   assign reg2 = registers[src2];
   

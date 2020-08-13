@@ -301,14 +301,10 @@ input          TD_CLK27;            //	TV Decoder 27MHz CLK
 ////////////////////////	GPIO	////////////////////////////////
 inout	[35:0]	GPIO_0;					//	GPIO Connection 0
 inout	[35:0]	GPIO_1;					//	GPIO Connection 1
-
-	IF_Stage IF(
-		.PC1(PC1),
-	);
 	
 	wire freeze = 1'b0;
 	wire branch_token = 1'b0;
-	wire[31:0] branch_addr = 32'b0
+	wire[31:0] branch_addr = 32'b0;
 	wire[31:0] IF_PC, IF_Instruction;
 	
 	IF_Stage IF (
@@ -317,9 +313,9 @@ inout	[35:0]	GPIO_1;					//	GPIO Connection 1
   .PC(IF_PC), .Instruction(IF_Instruction)
   );
   
-  wire [31:0] IF_REG_PC, IF_REG_Instruction;
+  wire[31:0] IF_REG_PC, IF_REG_Instruction;
   IF_Stage_Reg IFReg(
-  .clk(CLOCK_50), .rst(1'b0), .freeze(freeze), .flush('1'b0), 
+  .clk(CLOCK_50), .rst(1'b0), .freeze(freeze), .flush(1'b0), 
   .PCIn(IF_PC), .Instrution_in(IF_Instruction), 
   .PC(IF_REG_PC), .Instruction(IF_REG_Instruction)
   );
@@ -335,7 +331,7 @@ inout	[35:0]	GPIO_1;					//	GPIO Connection 1
   ID_Stage_Reg ID_REG(
   .clk(CLOCK_50), .rst(1'b0),
   .PCIn(ID_PC),
-  .PC(ID_REG_PC),
+  .PC(ID_REG_PC)
   );
 
   wire[31:0] EXE_PC;
@@ -349,7 +345,7 @@ inout	[35:0]	GPIO_1;					//	GPIO Connection 1
   EXE_Stage_Reg EXE_REG(
   .clk(CLOCK_50), .rst(1'b0),
   .PCIn(EXE_PC),
-  .PC(EXE_REG_PC),
+  .PC(EXE_REG_PC)
   );
   
   wire[31:0] MEM_PC;
@@ -363,7 +359,7 @@ inout	[35:0]	GPIO_1;					//	GPIO Connection 1
   MEM_Stage_Reg MEM_REG(
   .clk(CLOCK_50), .rst(1'b0),
   .PCIn(MEM_PC),
-  .PC(MEM_REG_PC),
+  .PC(MEM_REG_PC)
   );
   
   wire[31:0] WB_PC;
@@ -372,7 +368,5 @@ inout	[35:0]	GPIO_1;					//	GPIO Connection 1
   .PC_in(MEM_REG_PC),
   .PC(WB_PC)
   );
-    
 
 endmodule
-

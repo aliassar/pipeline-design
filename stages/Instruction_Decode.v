@@ -3,5 +3,5 @@ module ID_Stage (
   input[31:0] PC_in,
   output[31:0] PC
   );
-  PC = PC_in;
+  assign PC = PC_in;
 endmodule
