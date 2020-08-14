@@ -4,382 +4,402 @@ K3
 cModel Technology
 Z0 dC:\altera\13.0sp1
 vCondition_Check
-Z1 IE^0R1E>Xb<]]ji?BnoQGN3
-Z2 VX]kenU^4nXzQK[Zoa:hEn2
-Z3 dC:\Users\amin\Desktop\darsi\Arch-Lab\ca-lab
-Z4 w1597332688
-Z5 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Condition_Check.v
-Z6 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Condition_Check.v
+Z1 !s100 Zmn2RUZk=;^n[kOE43fz61
+Z2 IE^0R1E>Xb<]]ji?BnoQGN3
+Z3 VX]kenU^4nXzQK[Zoa:hEn2
+Z4 dC:\Users\amin\Desktop\darsi\Arch-Lab\ca-lab
+Z5 w1597332688
+Z6 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Condition_Check.v
+Z7 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Condition_Check.v
 L0 1
-Z7 OV;L;10.1d;51
+Z8 OV;L;10.1d;51
 r1
 31
-Z8 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Condition_Check.v|
-Z9 o-work work -O0
-Z10 n@condition_@check
-Z11 !s100 Zmn2RUZk=;^n[kOE43fz61
-Z12 !s108 1597332697.208000
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Condition_Check.v|
+Z10 o-work work -O0
+Z11 n@condition_@check
+!i10b 1
+!s85 0
+Z12 !s108 1597371939.546000
 Z13 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Condition_Check.v|
+!s101 -O0
+vControl_Unit
+Z14 !s100 lC9OIe[VQY>oM^_@Zdh^=3
+Z15 I1F3?k`Xbi]a@ITW:PClAZ0
+Z16 V8D>`R0o7i;P0P^Yl@G@TG2
+R4
+Z17 w1597334406
+Z18 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v
+Z19 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v
+L0 1
+R8
+r1
+31
+Z20 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v|
+R10
+Z21 n@control_@unit
+Z22 !s108 1597371939.468000
+Z23 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v|
 !i10b 1
 !s85 0
 !s101 -O0
-vControl_Unit
-Z14 I1F3?k`Xbi]a@ITW:PClAZ0
-Z15 V8D>`R0o7i;P0P^Yl@G@TG2
-R3
-Z16 w1597334406
-Z17 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v
-Z18 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v
-L0 1
-R7
+vEXE_Stage
+Z24 IMNPNDkVNOe=HIW4k?J1jV1
+Z25 Vo9zbl<U@b<1QjL`lXEgcz2
+R4
+Z26 w1597371900
+Z27 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v
+Z28 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v
+L0 2
+R8
 r1
 31
-R9
-Z19 n@control_@unit
-Z20 !s100 lC9OIe[VQY>oM^_@Zdh^=3
-Z21 !s108 1597334415.228000
-Z22 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v|
-Z23 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v|
+Z29 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v|
+R10
+Z30 n@e@x@e_@stage
+Z31 !s100 f;LmIUJUM=__h@7>2_`MY0
+Z32 !s108 1597371938.655000
+Z33 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vEXE_Stage_Reg
-Z24 !s100 8b7T0[VAl?1Ek5f<V?b7@2
-Z25 I:2loW92L`ElnW9oJ=O4>=0
-Z26 VQN=C1`5_45CFfTZ8>G5V93
-R3
-Z27 w1597331749
-Z28 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V
-Z29 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V
+Z34 !s100 8b7T0[VAl?1Ek5f<V?b7@2
+Z35 I:2loW92L`ElnW9oJ=O4>=0
+Z36 VQN=C1`5_45CFfTZ8>G5V93
+R4
+Z37 w1597331749
+Z38 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V
+Z39 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V
 L0 1
-R7
+R8
 r1
 31
-Z30 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V|
-R9
-Z31 n@e@x@e_@stage_@reg
-Z32 !s108 1597331921.978000
-Z33 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V|
+Z40 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V|
+R10
+Z41 n@e@x@e_@stage_@reg
+Z42 !s108 1597371939.140000
+Z43 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V|
 !i10b 1
 !s85 0
 !s101 -O0
 vEXEC_Stage
-Z34 !s100 `GVz;j;ZYXTKFEJa4GX=:3
-Z35 IA4O4@[Ao3c6T]m62f9mU:1
-Z36 V3c^e4hQa31A2EMC0c?bhn3
-R3
-Z37 w1597293725
-Z38 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v
-Z39 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v
+Z44 !s100 `GVz;j;ZYXTKFEJa4GX=:3
+Z45 IA4O4@[Ao3c6T]m62f9mU:1
+Z46 V3c^e4hQa31A2EMC0c?bhn3
+R4
+Z47 w1597293725
+R27
+R28
 L0 2
-R7
+R8
 r1
 31
-Z40 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v|
-R9
-Z41 n@e@x@e@c_@stage
-Z42 !s108 1597331921.577000
-Z43 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v|
+R29
+R10
+Z48 n@e@x@e@c_@stage
+Z49 !s108 1597331921.577000
+R33
 !i10b 1
 !s85 0
 !s101 -O0
 vID_Stage
-Z44 !s100 lI]^XBhocNRe[MKlnb;ZK1
-Z45 IzFj3I3X=;S2dR`_O;3n913
-Z46 VN=S@9QoJL:<kTn:VDXWRo1
-R3
-Z47 w1597331768
-Z48 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v
-Z49 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v
+Z50 !s100 lI]^XBhocNRe[MKlnb;ZK1
+Z51 IzFj3I3X=;S2dR`_O;3n913
+Z52 VN=S@9QoJL:<kTn:VDXWRo1
+R4
+Z53 w1597331768
+Z54 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v
+Z55 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v
 L0 1
-R7
+R8
 r1
 31
-Z50 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v|
-R9
-Z51 n@i@d_@stage
-Z52 !s108 1597331921.649000
-Z53 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v|
+Z56 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v|
+R10
+Z57 n@i@d_@stage
+Z58 !s108 1597371938.734000
+Z59 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vID_Stage_Reg
-Z54 Ioha9[H]ghY_POB>lQUK;B2
-Z55 VjA2HNA3>^g12bG@X?<ml42
-R3
-Z56 w1597334527
-Z57 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V
-Z58 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V
+Z60 !s100 j12DmVC<Eca<?N51WD0Wm0
+Z61 Ioha9[H]ghY_POB>lQUK;B2
+Z62 VjA2HNA3>^g12bG@X?<ml42
+R4
+Z63 w1597334527
+Z64 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V
+Z65 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V
 L0 1
-R7
+R8
 r1
 31
-R9
-Z59 n@i@d_@stage_@reg
+Z66 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V|
+R10
+Z67 n@i@d_@stage_@reg
+Z68 !s108 1597371939.062000
+Z69 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V|
 !i10b 1
-Z60 !s100 j12DmVC<Eca<?N51WD0Wm0
 !s85 0
-Z61 !s108 1597334532.334000
-Z62 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V|
-Z63 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V|
 !s101 -O0
 vIF_Stage
-Z64 In067cHDPS`CJ;jLWVbM^K0
-Z65 V3U5aa:YbE^nB3i@Q:=;z62
-R3
-Z66 w1597333736
-Z67 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v
-Z68 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v
-L0 53
-R7
+Z70 !s100 0SXmHJXmlViO2INAUcmGo2
+Z71 If?Hi[Q;ZPjWmec85`n_Y90
+Z72 V3U5aa:YbE^nB3i@Q:=;z62
+R4
+Z73 w1597371735
+Z74 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v
+Z75 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v
+L0 54
+R8
 r1
 31
-Z69 !s108 1597333742.814000
-Z70 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v|
-Z71 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v|
-R9
-Z72 n@i@f_@stage
-Z73 !s100 68O9E2;hWTE@9S:U6Ya670
+Z76 !s108 1597371938.796000
+Z77 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v|
+Z78 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v|
+R10
+Z79 n@i@f_@stage
 !i10b 1
 !s85 0
 !s101 -O0
 vIF_Stage_Reg
-Z74 IR0>OzY@cBZ_=_g20XiIC01
-Z75 VKXFdCb4KR?@^53JA_51EJ2
-R3
-Z76 w1597334456
-Z77 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V
-Z78 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V
+Z80 !s100 :`@ANSZP:kF?Vi4:jj@Ak1
+Z81 IR0>OzY@cBZ_=_g20XiIC01
+Z82 VKXFdCb4KR?@^53JA_51EJ2
+R4
+Z83 w1597334456
+Z84 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V
+Z85 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V
 L0 1
-R7
+R8
 r1
 31
-R9
-Z79 n@i@f_@stage_@reg
-Z80 !s100 :`@ANSZP:kF?Vi4:jj@Ak1
-Z81 !s108 1597334468.386000
-Z82 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V|
-Z83 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V|
+Z86 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V|
+R10
+Z87 n@i@f_@stage_@reg
+Z88 !s108 1597371939.202000
+Z89 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V|
 !i10b 1
 !s85 0
 !s101 -O0
 vInstructionMemory
-Z84 !s100 d8k]>QLon>H7YC>G96mE`3
-Z85 Im`]EYnK1[^14;9?LOd72:1
-Z86 V`Sd2h3f=X09dZ[6dMODS42
-R3
-R66
-R67
-R68
-L0 16
-R7
+Z90 !s100 H^U7baK`VKTQJH1fC7F:^3
+Z91 I<B@@aT4P:6kgg23HdjV`L1
+Z92 V`Sd2h3f=X09dZ[6dMODS42
+R4
+R73
+R74
+R75
+L0 17
+R8
 r1
 31
-R69
-R70
-R71
-R9
-Z87 n@instruction@memory
+R76
+R77
+R78
+R10
+Z93 n@instruction@memory
 !i10b 1
 !s85 0
 !s101 -O0
 vMEM_Stage
-Z88 !s100 :hP1GO3JP^AfBhzQAGAKk2
-Z89 IPe7R5JRazV5[N;2mUYfU]1
-Z90 V[[6@AI7C9^cL@2Q3WgSj]3
-R3
-R37
-Z91 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v
-Z92 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v
+Z94 !s100 iTg?SAH99eV4hRWVi3[R_3
+Z95 Ij2>h7:KenWbRnoJlA1[4;1
+Z96 V[[6@AI7C9^cL@2Q3WgSj]3
+R4
+Z97 w1597371919
+Z98 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v
+Z99 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v
 L0 2
-R7
+R8
 r1
 31
-Z93 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v|
-R9
-Z94 n@m@e@m_@stage
-Z95 !s108 1597331921.786000
-Z96 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v|
+Z100 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v|
+R10
+Z101 n@m@e@m_@stage
+Z102 !s108 1597371938.921000
+Z103 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vMEM_Stage_Reg
-!i10b 1
-!s100 :E:P^XJTRTBnYab6EoWRn0
-I9Z51RY@;fEBF38H2VI5Z[0
-V[eU;dW3^K5X0UCXNz3M<S0
-R3
-w1597334539
-8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V
-FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V
+Z104 !s100 :E:P^XJTRTBnYab6EoWRn0
+Z105 I9Z51RY@;fEBF38H2VI5Z[0
+Z106 V[eU;dW3^K5X0UCXNz3M<S0
+R4
+Z107 w1597334539
+Z108 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V
+Z109 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V
 L0 1
-R7
+R8
 r1
+31
+Z110 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V|
+R10
+Z111 n@m@e@m_@stage_@reg
+Z112 !s108 1597371939.280000
+Z113 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V|
+!i10b 1
 !s85 0
-31
-!s108 1597334542.662000
-!s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V|
-!s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V|
 !s101 -O0
-R9
-n@m@e@m_@stage_@reg
 vMIPS
-Z97 Ilj[]XGL[;MV=[V>z=z:`U1
-Z98 V<ao9YZf[Pz=bFYO;d[ImL1
-R3
-Z99 w1597334501
-Z100 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v
-Z101 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v
+Z114 !s100 8_[PmFkLlmYYGO`gzRVJn0
+Z115 Ilj[]XGL[;MV=[V>z=z:`U1
+Z116 V<ao9YZf[Pz=bFYO;d[ImL1
+R4
+Z117 w1597334501
+Z118 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v
+Z119 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v
 L0 48
-R7
+R8
 r1
 31
-Z102 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v|
-R9
-Z103 n@m@i@p@s
-Z104 !s100 8_[PmFkLlmYYGO`gzRVJn0
-Z105 !s108 1597334506.545000
-Z106 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v|
+Z120 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v|
+R10
+Z121 n@m@i@p@s
+Z122 !s108 1597371938.528000
+Z123 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vPCAdder
-Z107 !s100 7>lmCSa_B@=MSVK37o0O73
-Z108 I?j]H=N6Xh4IO>LY:3oY>Y2
-Z109 VOoTUKgCkTLNLRWXh6kQm10
-R3
-R66
-R67
-R68
-L0 8
-R7
+Z124 !s100 15AANC0HTgiFAlOCfO52K2
+Z125 IW3`ZfVQQ]IAT9Z@<4iG??1
+Z126 VOoTUKgCkTLNLRWXh6kQm10
+R4
+R73
+R74
+R75
+L0 9
+R8
 r1
 31
-R69
-R70
-R71
-R9
-Z110 n@p@c@adder
+R76
+R77
+R78
+R10
+Z127 n@p@c@adder
 !i10b 1
 !s85 0
 !s101 -O0
 vPCMux
-Z111 !s100 =jCUMJPbn3h?Q@?e>f@PK3
-Z112 ITZOWi]8UK0YGfG>UL7RPR0
-Z113 V5_Uz:8NkY8M4R8Sc=9SXg1
-R3
-R66
-R67
-R68
+Z128 !s100 _Bn[ela;fnlSmiXCbBLkZ1
+Z129 IBk_0;:ncLemkWfO3Ukg=G1
+Z130 V5_Uz:8NkY8M4R8Sc=9SXg1
+R4
+R73
+R74
+R75
 L0 1
-R7
+R8
 r1
 31
-R69
-R70
-R71
-R9
-Z114 n@p@c@mux
+R76
+R77
+R78
+R10
+Z131 n@p@c@mux
 !i10b 1
 !s85 0
 !s101 -O0
 vPCReg
-Z115 !s100 Y@7?`I0V7GWHNA:d09QR71
-Z116 IEWBEP;0PK^YTBON[hhzZc3
-Z117 V]Uh7^HO<BaI0h4I4JCG`o0
-R3
-R66
-R67
-R68
-L0 34
-R7
+Z132 !s100 Ei6]lgoNL9NCoA;jlEHl]2
+Z133 IEF<6g8eGT38kmEk_Ckmdj3
+Z134 V]Uh7^HO<BaI0h4I4JCG`o0
+R4
+R73
+R74
+R75
+L0 35
+R8
 r1
 31
-R69
-R70
-R71
-R9
-Z118 n@p@c@reg
+R76
+R77
+R78
+R10
+Z135 n@p@c@reg
 !i10b 1
 !s85 0
 !s101 -O0
 vRegisterFile
-Z119 I[I2H<8;_<Z3UTH6zbABmS1
-Z120 VG>h4WmJh5Z[6GD=[VF2z;0
-R3
-Z121 w1597333010
-Z122 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Register_File.v
-Z123 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Register_File.v
+Z136 !s100 i>`NjK_oM3_l_J1D5??>K1
+Z137 I[I2H<8;_<Z3UTH6zbABmS1
+Z138 VG>h4WmJh5Z[6GD=[VF2z;0
+R4
+Z139 w1597333010
+Z140 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Register_File.v
+Z141 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Register_File.v
 L0 1
-R7
+R8
 r1
 31
-R9
-Z124 n@register@file
-Z125 !s100 i>`NjK_oM3_l_J1D5??>K1
-Z126 !s108 1597333013.014000
-Z127 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Register_File.v|
-Z128 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Register_File.v|
+Z142 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Register_File.v|
+R10
+Z143 n@register@file
+Z144 !s108 1597371939.390000
+Z145 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Register_File.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vTEST_MIPS
-Z129 IS?2Z]m`iZb?l0kaaP@`KZ1
-Z130 VaU<FdQ97M0538b0h_b;hY2
-R3
-Z131 w1597334482
-Z132 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v
-Z133 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v
+!i10b 1
+Z146 !s100 d8I:04FMKP[kMP2RXF27=2
+Z147 IS?2Z]m`iZb?l0kaaP@`KZ1
+Z148 VaU<FdQ97M0538b0h_b;hY2
+R4
+Z149 w1597370876
+Z150 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v
+Z151 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v
 L0 1
-R7
+R8
 r1
-31
-Z134 !s108 1597334512.049000
-Z135 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v|
-Z136 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v|
-R9
-Z137 n@t@e@s@t_@m@i@p@s
-Z138 !s100 d8I:04FMKP[kMP2RXF27=2
-!i10b 1
 !s85 0
+31
+Z152 !s108 1597371939.624000
+Z153 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v|
+Z154 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v|
 !s101 -O0
+R10
+Z155 n@t@e@s@t_@m@i@p@s
 vTesting
-Z139 !s100 412cRfDdSCa5N_R[`2YTF0
-Z140 I<oUi[GU4cSD_gVL_mR_^K3
-Z141 VoFKnMIJ7Z8O3Jke5H8_zA2
-R3
-R131
-R132
-R133
-L0 73
-R7
-r1
-31
-R134
-R135
-R136
-R9
-Z142 n@testing
 !i10b 1
+Z156 !s100 zU0ec[o5mC7CEiUNN:eFA1
+Z157 IDfo4C?gFlfES43VK:Ma8a1
+Z158 VoFKnMIJ7Z8O3Jke5H8_zA2
+R4
+R149
+R150
+R151
+L0 73
+R8
+r1
 !s85 0
+31
+R152
+R153
+R154
 !s101 -O0
+R10
+Z159 n@testing
 vWB_Stage
-Z143 !s100 aGeZ4KPGeH;:4Xe2Vg@^22
-Z144 ICVam[:S>9NFZE4`YgjikY2
-Z145 V^NCGY]ZHBY6Oa<T<k1Aa73
-R3
-R37
-Z146 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v
-Z147 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v
+Z160 !s100 T<Bdo@CUoVfiZgLR4P2K@1
+Z161 I:bBcc014`IQA2_jbC:GmT1
+Z162 V^NCGY]ZHBY6Oa<T<k1Aa73
+R4
+Z163 w1597371904
+Z164 8C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v
+Z165 FC:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v
 L0 2
-R7
+R8
 r1
 31
-Z148 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v|
-R9
-Z149 n@w@b_@stage
-Z150 !s108 1597331921.858000
-Z151 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v|
+Z166 !s90 -reportprogress|300|-work|work|C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v|
+R10
+Z167 n@w@b_@stage
+Z168 !s108 1597371938.999000
+Z169 !s107 C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v|
 !i10b 1
 !s85 0
 !s101 -O0

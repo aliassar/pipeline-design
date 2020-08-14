@@ -3,6 +3,7 @@ module PCMux (
   input[31:0] pc_in, jmp_in,
   output[31:0] pc
   );
+  assign pc = sel ? jmp_in: pc_in;
 endmodule
 
 module PCAdder (
@@ -65,17 +66,17 @@ module IF_Stage (
   .pc(current_pc)
   );
   
-  PCMux Mux(
-  .sel(Branch_token),
-  .pc_in(current_pc), .jmp_in(BranchAddr),
-  .pc(selected_pc)
-  );
-  
   wire[31:0] next_pc;
   PCAdder Adder(
 		.pc_in(current_pc), .number(32'd4),
     .pc(next_pc)
 	);
+	
+  PCMux Mux(
+  .sel(Branch_token),
+  .pc_in(next_pc), .jmp_in(BranchAddr),
+  .pc(selected_pc)
+  );
 	
 	InstructionMemory InsMem(
 		.pc(current_pc),

@@ -77,9 +77,16 @@ module Testing();
     clk = 1'b0;
     #5
     rst = 1'b0;
-    forever begin
-      #5  clk = !clk; 
-    end
+    clk = !clk;
+    #5  clk = !clk;
+    #5  clk = !clk;
+    #5  clk = !clk;
+    #5  clk = !clk;
+    #5  clk = !clk;
+    #5  clk = !clk;
+    #5  clk = !clk;
+    #5  clk = !clk;
+    #5  clk = !clk;
   end
 
   TEST_MIPS mips(

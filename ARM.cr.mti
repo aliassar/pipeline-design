@@ -1,4 +1,11 @@
-C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/mux32bit.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/mux32bit.v
+C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/ARM.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module MIPS
+
+Top level modules:
+	MIPS
+
+} {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/mux32bit.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/mux32bit.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 
 } {} {}} {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V} {1 {vlog -work work {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/EXE2MEM.V}
@@ -7,20 +14,6 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 
 Top level modules:
 	EXE_Stage_Reg
-
-} {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Execute.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module EXEC_Stage
-
-Top level modules:
-	EXEC_Stage
-
-} {} {}} {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v} {1 {vlog -work work {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Write Back.v}
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module WB_Stage
-
-Top level modules:
-	WB_Stage
 
 } {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Decode.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -43,6 +36,14 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	RegisterFile
 
+} {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TEST_MIPS
+-- Compiling module Testing
+
+Top level modules:
+	Testing
+
 } {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module PCMux
@@ -57,13 +58,6 @@ Top level modules:
 } {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Hazard_Detection_Unit.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Hazard_Detection_Unit.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 
-} {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Control_Unit
-
-Top level modules:
-	Control_Unit
-
 } {} {}} {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V} {1 {vlog -work work {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/IF2DEC.V}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module IF_Stage_Reg
@@ -71,21 +65,25 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	IF_Stage_Reg
 
-} {} {}} {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V} {0 {vlog -work work {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V}
+} {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/Control_Unit.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module ID_Stage_Reg
-** Error: C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V(5): near ")": Missing port in ansi port list.
-
-} {4.0 5.0} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Memory.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module MEM_Stage
+-- Compiling module Control_Unit
 
 Top level modules:
-	MEM_Stage
+	Control_Unit
 
-} {} {}} {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V} {0 {vlog -work work {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V}
+} {} {}} {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V} {1 {vlog -work work {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/DEC2EXE.V}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ID_Stage_Reg
+
+Top level modules:
+	ID_Stage_Reg
+
+} {} {}} {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V} {1 {vlog -work work {C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V}
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module MEM_Stage_Reg
-** Error: C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/pipeline registers/MEM2WB.V(5): near ")": Missing port in ansi port list.
 
-} {4.0 5.0} {}}
+Top level modules:
+	MEM_Stage_Reg
+
+} {} {}}
