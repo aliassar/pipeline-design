@@ -1,16 +1,16 @@
-
-module IF2DEC (clk, rst, PCIn, PC);
-  input clk, rst;
-  input WB_EN_IN, MEM_R_EN_IN, MEM_W_EN_IN;
-  input [31:0] PCIn;
-  output reg [31:0] PC;
-
+module IF_Stage_Reg (
+  input clk, rst, freeze, flush, 
+  input[31:0] PCIn, Instruction_in, 
+  output reg[31:0] PC, Instruction
+  );
   always @ (posedge clk) begin
     if (rst) begin
       {PC} <= 0;
+      {Instruction} <= 32'b0;
     end
     else begin
       PC <= PCIn;
+      Instruction <= Instruction_in;
     end
   end
 endmodule

@@ -301,18 +301,72 @@ input          TD_CLK27;            //	TV Decoder 27MHz CLK
 ////////////////////////	GPIO	////////////////////////////////
 inout	[35:0]	GPIO_0;					//	GPIO Connection 0
 inout	[35:0]	GPIO_1;					//	GPIO Connection 1
+	
+	wire freeze = 1'b0;
+	wire branch_token = 1'b0;
+	wire[31:0] branch_addr = 32'b0;
+	wire[31:0] IF_PC, IF_Instruction;
+	
+	IF_Stage IF (
+  .clk(CLOCK_50), .rst(1'b0), .freeze(freeze), .Branch_token(branch_token),
+  .BranchAddr(branch_token),
+  .PC(IF_PC), .Instruction(IF_Instruction)
+  );
+  
+  wire[31:0] IF_REG_PC, IF_REG_Instruction;
+  IF_Stage_Reg IFReg(
+  .clk(CLOCK_50), .rst(1'b0), .freeze(freeze), .flush(1'b0), 
+  .PCIn(IF_PC), .Instruction_in(IF_Instruction), 
+  .PC(IF_REG_PC), .Instruction(IF_REG_Instruction)
+  );
+  
+  wire[31:0] ID_PC;
+  ID_Stage ID(
+  .clk(CLOCK_50), .rst(1'b0),
+  .PC_in(IF_REG_PC),
+  .PC(ID_PC)
+  );
+  
+  wire[31:0] ID_REG_PC;
+  ID_Stage_Reg ID_REG(
+  .clk(CLOCK_50), .rst(1'b0),
+  .PCIn(ID_PC),
+  .PC(ID_REG_PC)
+  );
 
-	Instruction_Decode ID(
-		//INPUTS
-		.Branch_Tacken(Branch_Tacken),
-		.Hazard(Hazard),
-		.Branch_Address(Branch_Address),
-		//OUTPUTS
-		.PC0(PC0),
-	);
-	Instruction_Fetch IF(
-		.PC1(PC1),
-	);
+  wire[31:0] EXE_PC;
+  EXE_Stage EXE(
+  .clk(CLOCK_50), .rst(1'b0),
+  .PC_in(ID_REG_PC),
+  .PC(EXE_PC)
+  );
+  
+  wire[31:0] EXE_REG_PC;
+  EXE_Stage_Reg EXE_REG(
+  .clk(CLOCK_50), .rst(1'b0),
+  .PCIn(EXE_PC),
+  .PC(EXE_REG_PC)
+  );
+  
+  wire[31:0] MEM_PC;
+  MEM_Stage MEM(
+  .clk(CLOCK_50), .rst(1'b0),
+  .PC_in(EXE_REG_PC),
+  .PC(MEM_PC)
+  );
+  
+  wire[31:0] MEM_REG_PC;
+  MEM_Stage_Reg MEM_REG(
+  .clk(CLOCK_50), .rst(1'b0),
+  .PCIn(MEM_PC),
+  .PC(MEM_REG_PC)
+  );
+  
+  wire[31:0] WB_PC;
+  WB_Stage WB(
+  .clk(CLOCK_50), .rst(1'b0),
+  .PC_in(MEM_REG_PC),
+  .PC(WB_PC)
+  );
 
 endmodule
-
