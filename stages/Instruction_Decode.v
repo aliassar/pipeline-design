@@ -30,9 +30,9 @@ module ID_Stage (
   );
   wire condition_check;
   Condition_Check CC(
+    .N(SR[0]), 
     .Z(SR[1]),
     .C(SR[2]), 
-    .N(SR[0]), 
     .V(SR[3]),
     .Cond(Instruction[31:28]),
     .Condition(condition_check)

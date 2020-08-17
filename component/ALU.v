@@ -9,7 +9,7 @@ module ALU(
     
     wire z, n;
     reg v, cout;
-    assign statusRegister = {z, cout, n, v};
+    assign statusRegister = {n, z, cout, v};
 
     assign z = (alu_out == 0 ? 1 : 0);
     assign n = alu_out[31];

@@ -34,7 +34,7 @@ module TEST_MIPS(
     .writeBackEn(WB_en_MEM_REG),
     .Dest_wb(Dest_MEM_REG),
     .hazard(1'b0),
-    .SR(4'b0),
+    .SR(SR),
     .WB_EN(WB_EN_ID), .MEM_R_EN(MEM_R_EN_ID), .MEM_W_EN(MEM_W_EN_ID), 
     .B(B_ID), .S(S_ID),
     .EXE_CMD(EXE_CMD_ID),
@@ -68,7 +68,7 @@ module TEST_MIPS(
   .Shift_operand_IN(Shift_operand_ID),
   .Signed_imm_24_IN(Signed_imm_24_ID),
   .Dest_IN(Dest_ID),
-  .SR_IN(4'b0)
+  .SR_IN(SR)
   
   .WB_EN(WB_EN_ID_REG), .MEM_R_EN(MEM_R_EN_ID_REG), .MEM_W_EN(MEM_W_EN_ID_REG), 
   .B(B_ID_REG), .S(S_ID_REG),
@@ -139,6 +139,13 @@ module TEST_MIPS(
   .MEM_R_en(MEM_R_en_MEM_REG),
   .out(WB_Value)
   );
+
+  wire SR ;
+  Status_Register ST_REG(
+    .clk(CLOCK_50), .rst(RST), .w_en(S_ID_REG),
+    .SR_in(status_EXE),
+    .SR(SR)
+);
 
 endmodule
 
