@@ -3,7 +3,7 @@ module IF_Stage_Reg (
   input[31:0] PCIn, Instruction_in, 
   output reg[31:0] PC, Instruction
   );
-  always @ (posedge clk) begin
+  always @ (posedge clk, posedge rst) begin
     if (rst | flush) begin
       {PC} <= 0;
       {Instruction} <= 32'b0;

@@ -6,7 +6,7 @@ module EXE_Stage_Reg (
   output reg[31:0] ALU_result, ST_val,
   output reg[3:0] Dest
   );
-  always @ (posedge clk) begin
+  always @ (posedge clk, posedge rst) begin
     if (rst) begin
       WB_en <= 1'b0;
       MEM_R_EN <= 1'b0;

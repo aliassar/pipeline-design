@@ -38,7 +38,7 @@ module PCReg (
   output reg[31:0] pc
   );
   
-  always @ (posedge clk) begin
+  always @ (posedge clk, posedge rst) begin
     if (rst) begin
       pc <= 32'b0;
     end

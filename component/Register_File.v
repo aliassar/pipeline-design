@@ -5,19 +5,18 @@ module RegisterFile (
   input writeBackEn,
   output[31:0] reg1, reg2
 );
-  reg[31:0] registers [14:0];
+  reg[31:0] registers [0:14];
   integer i;
-  initial begin
-    for(i = 0; i < 15; i = i + 1) begin
-      registers[i] = i;
-    end
-  end
   
   assign reg1 = registers[src1];
   assign reg2 = registers[src2];
   
-  always @ (posedge clk) begin
-    if (writeBackEn) begin
+  always @ (negedge clk, posedge rst) begin
+    if (rst) begin
+			for(i=0; i < 15; i=i+1)
+				registers[i] <= i;
+    end
+    else if (writeBackEn) begin
       registers[Dest_wb] <= Result_WB;
     end
   end

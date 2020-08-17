@@ -6,7 +6,7 @@ module MEM_Stage_Reg (
   output reg[31:0] ALU_result, MEM_read_value,
   output reg[3:0] Dest
   );
-  always @ (posedge clk) begin
+  always @ (posedge clk, posedge rst) begin
     if (rst) begin
       WB_en <= 1'b0;
       MEM_R_en <= 1'b0;
