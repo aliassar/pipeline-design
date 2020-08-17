@@ -9,7 +9,7 @@ module MEM_Stage (
     .W_EN(MEMwrite), .R_EN(MEMread),
     .address(address),
     .write_data(data),
-    .read_data(MEM_result),
+    .read_data(MEM_result)
   );
 
 endmodule

@@ -3,6 +3,13 @@ module TEST_MIPS(
 );
 	
 	wire[31:0] IF_PC, IF_Instruction;
+	wire[31:0] ALU_result_EXE, Br_addr_EXE;
+	wire WB_en_MEM_REG, MEM_R_en_MEM_REG;
+	wire WB_EN_ID_REG, MEM_R_EN_ID_REG, MEM_W_EN_ID_REG, B_ID_REG, S_ID_REG;
+	wire[3:0] Dest_MEM_REG;
+	wire[31:0] WB_Value;
+	wire SR ;
+	wire hazard_detected;
 	
 	IF_Stage IF (
   .clk(CLOCK_50), .rst(RST), .freeze(hazard_detected), .Branch_token(B_ID_REG),
@@ -46,7 +53,6 @@ module TEST_MIPS(
     .Two_src(Two_src_ID)
   );
   
-  wire WB_EN_ID_REG, MEM_R_EN_ID_REG, MEM_W_EN_ID_REG, B_ID_REG, S_ID_REG;
   wire[3:0] EXE_CMD_ID_REG;
   wire[31:0] PC_ID_REG;
   wire[31:0] Val_Rn_ID_REG, Val_Rm_ID_REG;
@@ -67,7 +73,7 @@ module TEST_MIPS(
   .Shift_operand_IN(Shift_operand_ID),
   .Signed_imm_24_IN(Signed_imm_24_ID),
   .Dest_IN(Dest_ID),
-  .SR_IN(SR)
+  .SR_IN(SR),
   
   .WB_EN(WB_EN_ID_REG), .MEM_R_EN(MEM_R_EN_ID_REG), .MEM_W_EN(MEM_W_EN_ID_REG), 
   .B(B_ID_REG), .S(S_ID_REG),
@@ -77,16 +83,15 @@ module TEST_MIPS(
   .imm(imm_ID_REG),
   .Shift_operand(Shift_operand_ID_REG),
   .Signed_imm_24(Signed_imm_24_ID_REG),
-  .Dest(Dest_ID_REG)
+  .Dest(Dest_ID_REG),
   .SR(SR_ID_REG)
   );
 
-  wire[31:0] ALU_result_EXE, Br_addr_EXE;
   wire[3:0] status_EXE;
   EXE_Stage EXE(
   .clk(CLOCK_50),
   .EXE_CMD(EXE_CMD_ID_REG),
-  .MEM_R_EN(MEM_R_EN_ID_REG), MEM_W_EN(MEM_W_EN_ID_REG),
+  .MEM_R_EN(MEM_R_EN_ID_REG), .MEM_W_EN(MEM_W_EN_ID_REG),
   .PC(PC_ID_REG),
   .Val_Rn(Val_Rn_ID_REG), .Val_Rm(Val_Rm_ID_REG),
   .imm(imm_ID_REG),
@@ -116,9 +121,7 @@ module TEST_MIPS(
   .MEM_result(MEM_result_MEM)
   );
 
-  wire WB_en_MEM_REG, MEM_R_en_MEM_REG;
   wire[31:0] ALU_result_MEM_REG, MEM_result_MEM_REG;
-  wire[3:0] Dest_MEM_REG;
   MEM_Stage_Reg MEM_REG(
   .clk(CLOCK_50), .rst(RST), 
   .WB_en_in(WB_en_EXE_REG), .MEM_R_en_in(MEM_R_EN_EXE_REG),
@@ -127,11 +130,10 @@ module TEST_MIPS(
   .Dest_in(Dest_EXE_REG),
   .WB_en(WB_en_MEM_REG), 
   .MEM_R_en(MEM_R_en_MEM_REG),
-  .ALU_result(ALU_result_MEM_REG), MEM_read_value(MEM_result_MEM_REG),
+  .ALU_result(ALU_result_MEM_REG), .MEM_read_value(MEM_result_MEM_REG),
   .Dest(Dest_MEM_REG)
   );
 
-  wire[31:0] WB_Value;
   WB_Stage WB(
   .ALU_result(ALU_result_MEM_REG), 
   .MEM_result(MEM_result_MEM_REG),
@@ -139,14 +141,12 @@ module TEST_MIPS(
   .out(WB_Value)
   );
 
-  wire SR ;
   Status_Register ST_REG(
     .clk(CLOCK_50), .rst(RST), .w_en(S_ID_REG),
     .SR_in(status_EXE),
     .SR(SR)
   );
 
-  wire hazard_detected;
   Hazard_Detection HD_Unit(
     .two_src(Two_src_ID),
     .src1(src1_ID), .src2(src2_ID),

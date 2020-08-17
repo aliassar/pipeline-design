@@ -20,7 +20,7 @@ module EXE_Stage (
 	wire[31:0] imm_24_extended;
   	ExtendImm24 extender(
     	.in(Signed_imm_24),
-    	.out(imm_24_extended),
+    	.out(imm_24_extended)
 	);
 	assign branch_address = PC + imm_24_extended;	
 	
