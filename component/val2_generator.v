@@ -28,15 +28,10 @@ module Val2Generator(
 
     assign val2_out = (is_mem_command == 1'b0) ? 
         (
-            // (imm == 1'b1) ? {24'b0, shift_operand[7:0]} // need for loop here.
-            (imm == 1'b1) ? 
-            (
-                (shift_operand[11:8] == 4'b0) ? {24'b0, shift_operand[7:0]} : imd_shifted
-            )
+            (imm == 1'b1) ? imd_shifted
             : (shift_operand[6:5] == 2'b00) ? Rm << {1'b0, shift_operand[11:7]}     //LSL
             : (shift_operand[6:5] == 2'b01) ? Rm >> {1'b0, shift_operand[11:7]}     //LSR
             : (shift_operand[6:5] == 2'b10) ? Rm >>> {1'b0, shift_operand[11:7]}    //ASR   
-            : ((shift_operand[6:5] == 2'b11) && (shift_operand[11:8] == 4'b0)) ? Rm     //ROR
             : rm_rotate
         )
         : {20'b0, shift_operand};

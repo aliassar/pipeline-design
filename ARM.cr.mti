@@ -40,6 +40,13 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	ID_Stage
 
+} {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/ALU.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/ALU.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
 } {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/mux.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/mux.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module MUX9
@@ -50,13 +57,6 @@ Top level modules:
 	MUX9
 	MUX4
 	MUX32
-
-} {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/val2_generator.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/val2_generator.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Val2Generator
-
-Top level modules:
-	Val2Generator
 
 } {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/SRAM.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/SRAM.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
