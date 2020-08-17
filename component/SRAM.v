@@ -10,7 +10,8 @@ module SRAM(
 
     reg[31:0] data[0:64]    //256 byte
     wire transfer_address[5:0]  //6 bit address
-    assign {transfer_address} = address[7:2];
+    wire[31:0] new_address = address - 32'd1024
+    assign {transfer_address} = new_address[7:2];
 
     assign read_data <= R_EN == 1'b1? data[transfer_address] : 32'bz;
     always@(*) begin
