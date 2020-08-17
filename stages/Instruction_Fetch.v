@@ -80,6 +80,6 @@ module IF_Stage (
     .instruction(Instruction)
 	);
 	
-	assign PC = current_pc;
+	assign PC = next_pc;
 	
 endmodule

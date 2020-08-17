@@ -8,7 +8,7 @@ module IF_Stage_Reg (
       {PC} <= 0;
       {Instruction} <= 32'b0;
     end
-    else begin
+    else if (freeze == 1'b0) begin
       PC <= PCIn;
       Instruction <= Instruction_in;
     end

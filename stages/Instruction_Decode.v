@@ -43,24 +43,26 @@ module ID_Stage (
   assign continue = hazard & not_condition;
   
   wire[8:0] final_cu;
-  MUX8 mux_command(
+  MUX9 mux_command(
     .sel(continue),
     .a(9'b0), 
     .b({S_CU,B_CU,EXE_CMD_CU,mem_write_CU,mem_read_CU,WB_Enable_CU}),
     .o(final_cu)
   );
-  assign S = final_cu[8]; 
-  assign B = final_cu[7];
-  assign EXE_CMD = final_cu[6:3];
-  assign MEM_W_EN = final_cu[2];
-  assign MEM_R_EN = final_cu[1];
-  assign WB_EN = final_cu[0];
+  assign {S, B, EXE_CMD, MEM_W_EN, MEM_R_EN, WB_EN} = final_cu; 
   
+  wire RF_src2;
+  MUX4 mux_src2 (
+    .sel(MEM_W_EN),
+    .a(Instruction[15:12]), .b(Instruction[3:0]),
+    .o(RF_src2)
+  );
+
   RegisterFile RF(
     .clk(clk),
     .rst(rst),
     .src1(Instruction[19:16]), 
-    .src2(Instruction[3:0]),
+    .src2(RF_src2),
     .Dest_wb(Dest_wb),
     .Result_WB(Result_WB),
     .writeBackEn(writeBackEn),
@@ -73,7 +75,7 @@ module ID_Stage (
   assign Signed_imm_24 = Instruction[23:0];
   assign Dest = Instruction[15:12];
   assign src1 = Instruction[19:16];
-  assign src2 = Instruction[3:0];
+  assign src2 = RF_src2;
   assign Two_src = (!imm) | MEM_W_EN;
   
 endmodule

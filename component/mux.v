@@ -1,4 +1,4 @@
-module MUX8(
+module MUX9(
   input sel,
   input[8:0] a, b,
   output[8:0] o
