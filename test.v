@@ -83,7 +83,7 @@ module TEST_MIPS(
 
   wire[31:0] ALU_result_EXE, Br_addr_EXE;
   wire[3:0] status_EXE;
-  module EXE_Stage (
+  EXE_Stage EXE(
   .clk(CLOCK_50),
   .EXE_CMD(EXE_CMD_ID_REG),
   .MEM_R_EN(MEM_R_EN_ID_REG), MEM_W_EN(MEM_W_EN_ID_REG),
@@ -100,7 +100,7 @@ module TEST_MIPS(
   wire WB_en_EXE_REG, MEM_R_EN_EXE_REG, MEM_W_EN_EXE_REG;
   wire[31:0] ALU_result_EXE_REG, ST_val_EXE_REG;
   wire[3:0] Dest_EXE_REG;
-  module EXE_Stage_Reg (
+  EXE_Stage_Reg EXE_REG(
   .clk(CLOCK_50), .rst(RST), .WB_en_in(WB_EN_ID_REG), .MEM_R_EN_in(MEM_R_EN_ID_REG), .MEM_W_EN_in(MEM_W_EN_ID_REG),
   .ALU_result_in(ALU_result_EXE), .ST_val_in(Val_Rm_ID_REG),
   .Dest_in(Dest_ID_REG),
@@ -109,34 +109,28 @@ module TEST_MIPS(
   .Dest(Dest_EXE_REG)
   );
 
-  wire[31:0] EXE_PC;
-  EXE_Stage EXE(
-  .clk(CLOCK_50), .rst(RST),
-  .PC_in(PC_ID_REG),
-  .PC(EXE_PC)
-  );
-  
-  wire[31:0] EXE_REG_PC;
-  EXE_Stage_Reg EXE_REG(
-  .clk(CLOCK_50), .rst(RST),
-  .PCIn(EXE_PC),
-  .PC(EXE_REG_PC)
-  );
-  
-  wire[31:0] MEM_PC;
+  wire[31:0] MEM_result_MEM;
   MEM_Stage MEM(
-  .clk(CLOCK_50), .rst(RST),
-  .PC_in(EXE_REG_PC),
-  .PC(MEM_PC)
+  .clk(CLOCK_50), .MEMread(MEM_R_EN_EXE_REG), .MEMwrite(MEM_W_EN_EXE_REG),
+  .address(ST_val_EXE_REG), .data(ALU_result_EXE_REG),
+  .MEM_result(MEM_result_MEM)
   );
-  
-  wire[31:0] MEM_REG_PC;
+
+  wire WB_en_MEM_REG, MEM_R_en_MEM_REG;
+  wire[31:0] ALU_result_MEM_REG, MEM_result_MEM_REG;
+  wire[3:0] Dest_MEM_REG;
   MEM_Stage_Reg MEM_REG(
-  .clk(CLOCK_50), .rst(RST),
-  .PCIn(MEM_PC),
-  .PC(MEM_REG_PC)
+  .clk(CLOCK_50), .rst(RST), 
+  .WB_en_in(WB_en_EXE_REG), .MEM_R_en_in(MEM_R_EN_EXE_REG),
+  .ALU_result_in(ALU_result_EXE_REG), 
+  .Mem_read_value_in(MEM_result_MEM),
+  .Dest_in(Dest_EXE_REG),
+  .WB_en(WB_en_MEM_REG), 
+  .MEM_R_en(MEM_R_en_MEM_REG),
+  .ALU_result(ALU_result_MEM_REG), MEM_read_value(MEM_result_MEM_REG),
+  .Dest(Dest_MEM_REG)
   );
-  
+
   wire[31:0] WB_PC;
   WB_Stage WB(
   .clk(CLOCK_50), .rst(RST),
