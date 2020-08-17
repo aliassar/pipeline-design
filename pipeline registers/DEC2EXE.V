@@ -21,7 +21,7 @@ module ID_Stage_Reg (
   output reg[3:0] SR
   );
   always @ (posedge clk) begin
-    if (rst) begin
+    if (rst | flush) begin
       {WB_EN} <= 0;  
       {MEM_R_EN} <= 0;
       {MEM_W_EN} <= 0;

@@ -37,9 +37,6 @@ module PCReg (
   input[31:0] pc_in,
   output reg[31:0] pc
   );
-  initial begin
-    pc <= 1'b0;
-  end
   
   always @ (posedge clk) begin
     if (rst) begin

@@ -2,18 +2,17 @@ module TEST_MIPS(
 	input CLOCK_50, RST
 );
 	
-	wire freeze = 1'b0;
 	wire[31:0] IF_PC, IF_Instruction;
 	
 	IF_Stage IF (
-  .clk(CLOCK_50), .rst(RST), .freeze(freeze), .Branch_token(B_ID_REG),
+  .clk(CLOCK_50), .rst(RST), .freeze(hazard_detected), .Branch_token(B_ID_REG),
   .BranchAddr(Br_addr_EXE),
   .PC(IF_PC), .Instruction(IF_Instruction)
   );
   
   wire [31:0] IF_REG_PC, IF_REG_Instruction;
   IF_Stage_Reg IFReg(
-  .clk(CLOCK_50), .rst(RST), .freeze(freeze), .flush(1'b0), 
+  .clk(CLOCK_50), .rst(RST), .freeze(hazard_detected), .flush(B_ID_REG), 
   .PCIn(IF_PC), .Instruction_in(IF_Instruction), 
   .PC(IF_REG_PC), .Instruction(IF_REG_Instruction)
   );
@@ -33,7 +32,7 @@ module TEST_MIPS(
     .Result_WB(WB_Value),
     .writeBackEn(WB_en_MEM_REG),
     .Dest_wb(Dest_MEM_REG),
-    .hazard(1'b0),
+    .hazard(hazard_detected),
     .SR(SR),
     .WB_EN(WB_EN_ID), .MEM_R_EN(MEM_R_EN_ID), .MEM_W_EN(MEM_W_EN_ID), 
     .B(B_ID), .S(S_ID),
@@ -58,7 +57,7 @@ module TEST_MIPS(
   wire[3:0] SR_ID_REG;
   
   ID_Stage_Reg ID_REG(
-  .clk(CLOCK_50), .rst(RST), .flush(1'b0),
+  .clk(CLOCK_50), .rst(RST), .flush(B_ID_REG),
   .WB_EN_IN(WB_EN_ID), .MEM_R_EN_IN(MEM_R_EN_ID), .MEM_W_EN_IN(MEM_W_EN_ID), 
   .B_IN(B_ID), .S_IN(S_ID),
   .EXE_CMD_IN(EXE_CMD_ID),
@@ -145,7 +144,16 @@ module TEST_MIPS(
     .clk(CLOCK_50), .rst(RST), .w_en(S_ID_REG),
     .SR_in(status_EXE),
     .SR(SR)
-);
+  );
+
+  wire hazard_detected;
+  Hazard_Detection HD_Unit(
+    .two_src(Two_src_ID),
+    .src1(src1_ID), .src2(src2_ID),
+    .Dest_EXE(Dest_ID_REG), .Dest_MEM(Dest_EXE_REG),
+    .WB_EN_EXE(WB_EN_ID_REG), .WB_EN_MEM(WB_en_EXE_REG),
+    .hazard_Detected(hazard_detected)
+  );
 
 endmodule
 

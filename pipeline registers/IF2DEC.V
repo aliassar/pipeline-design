@@ -4,7 +4,7 @@ module IF_Stage_Reg (
   output reg[31:0] PC, Instruction
   );
   always @ (posedge clk) begin
-    if (rst) begin
+    if (rst | flush) begin
       {PC} <= 0;
       {Instruction} <= 32'b0;
     end
