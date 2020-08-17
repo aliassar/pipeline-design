@@ -3,13 +3,11 @@ module TEST_MIPS(
 );
 	
 	wire freeze = 1'b0;
-	wire branch_token = 1'b0;
-	wire[31:0] branch_addr = 32'b0;
 	wire[31:0] IF_PC, IF_Instruction;
 	
 	IF_Stage IF (
-  .clk(CLOCK_50), .rst(RST), .freeze(freeze), .Branch_token(branch_token),
-  .BranchAddr(branch_token),
+  .clk(CLOCK_50), .rst(RST), .freeze(freeze), .Branch_token(B_ID_REG),
+  .BranchAddr(Br_addr_EXE),
   .PC(IF_PC), .Instruction(IF_Instruction)
   );
   
@@ -56,6 +54,7 @@ module TEST_MIPS(
   wire[11:0] Shift_operand_ID_REG;
   wire[23:0] Signed_imm_24_ID_REG;
   wire[3:0] Dest_ID_REG;
+  wire[3:0] SR_ID_REG;
   
   ID_Stage_Reg ID_REG(
   .clk(CLOCK_50), .rst(RST), .flush(1'b0),
@@ -68,6 +67,7 @@ module TEST_MIPS(
   .Shift_operand_IN(Shift_operand_ID),
   .Signed_imm_24_IN(Signed_imm_24_ID),
   .Dest_IN(Dest_ID),
+  .SR_IN(4'b0)
   
   .WB_EN(WB_EN_ID_REG), .MEM_R_EN(MEM_R_EN_ID_REG), .MEM_W_EN(MEM_W_EN_ID_REG), 
   .B(B_ID_REG), .S(S_ID_REG),
@@ -78,6 +78,35 @@ module TEST_MIPS(
   .Shift_operand(Shift_operand_ID_REG),
   .Signed_imm_24(Signed_imm_24_ID_REG),
   .Dest(Dest_ID_REG)
+  .SR(SR_ID_REG)
+  );
+
+  wire[31:0] ALU_result_EXE, Br_addr_EXE;
+  wire[3:0] status_EXE;
+  module EXE_Stage (
+  .clk(CLOCK_50),
+  .EXE_CMD(EXE_CMD_ID_REG),
+  .MEM_R_EN(MEM_R_EN_ID_REG), MEM_W_EN(MEM_W_EN_ID_REG),
+  .PC(PC_ID_REG),
+  .Val_Rn(Val_Rn_ID_REG), .Val_Rm(Val_Rm_ID_REG),
+  .imm(imm_ID_REG),
+  .Shift_operand(Shift_operand_ID_REG),
+  .Signed_imm_24(Signed_imm_24_ID_REG),
+  .SR(SR_ID_REG),
+  .ALU_result(ALU_result_EXE), .Br_addr(Br_addr_EXE),
+  .status(status_EXE)
+  );
+
+  wire WB_en_EXE_REG, MEM_R_EN_EXE_REG, MEM_W_EN_EXE_REG;
+  wire[31:0] ALU_result_EXE_REG, ST_val_EXE_REG;
+  wire[3:0] Dest_EXE_REG;
+  module EXE_Stage_Reg (
+  .clk(CLOCK_50), .rst(RST), .WB_en_in(WB_EN_ID_REG), .MEM_R_EN_in(MEM_R_EN_ID_REG), .MEM_W_EN_in(MEM_W_EN_ID_REG),
+  .ALU_result_in(ALU_result_EXE), .ST_val_in(Val_Rm_ID_REG),
+  .Dest_in(Dest_ID_REG),
+  .WB_en(WB_en_EXE_REG), .MEM_R_EN(MEM_R_EN_EXE_REG), .MEM_W_EN(MEM_W_EN_EXE_REG),
+  .ALU_result(ALU_result_EXE_REG), .ST_val(ST_val_EXE_REG),
+  .Dest(Dest_EXE_REG)
   );
 
   wire[31:0] EXE_PC;

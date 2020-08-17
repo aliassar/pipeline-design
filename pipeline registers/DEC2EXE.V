@@ -8,6 +8,7 @@ module ID_Stage_Reg (
   input[11:0] Shift_operand_IN,
   input[23:0] Signed_imm_24_IN,
   input[3:0] Dest_IN,
+  input[3:0] SR_IN,
   
   output reg WB_EN, MEM_R_EN, MEM_W_EN, B, S,
   output reg[3:0] EXE_CMD,
@@ -16,7 +17,8 @@ module ID_Stage_Reg (
   output reg imm,
   output reg[11:0] Shift_operand,
   output reg[23:0] Signed_imm_24,
-  output reg[3:0] Dest
+  output reg[3:0] Dest,
+  output reg[3:0] SR
   );
   always @ (posedge clk) begin
     if (rst) begin
