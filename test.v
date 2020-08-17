@@ -29,9 +29,10 @@ module TEST_MIPS(
   wire Two_src_ID;
   ID_Stage ID(
     .clk(CLOCK_50), .rst(RST),
-    .Instruction(IF_REG_Instruction), .Result_WB(32'b0),
-    .writeBackEn(1'b0),
-    .Dest_wb(4'b0),
+    .Instruction(IF_REG_Instruction), 
+    .Result_WB(WB_Value),
+    .writeBackEn(WB_en_MEM_REG),
+    .Dest_wb(Dest_MEM_REG),
     .hazard(1'b0),
     .SR(4'b0),
     .WB_EN(WB_EN_ID), .MEM_R_EN(MEM_R_EN_ID), .MEM_W_EN(MEM_W_EN_ID), 
@@ -131,12 +132,14 @@ module TEST_MIPS(
   .Dest(Dest_MEM_REG)
   );
 
-  wire[31:0] WB_PC;
+  wire[31:0] WB_Value;
   WB_Stage WB(
-  .clk(CLOCK_50), .rst(RST),
-  .PC_in(MEM_REG_PC),
-  .PC(WB_PC)
+  .ALU_result(ALU_result_MEM_REG), 
+  .MEM_result(MEM_result_MEM_REG),
+  .MEM_R_en(MEM_R_en_MEM_REG),
+  .out(WB_Value)
   );
+
 endmodule
 
 module Testing();
