@@ -158,22 +158,14 @@ module TEST_MIPS(
 endmodule
 
 module Testing();
-  reg clk, rst;
+  reg clk = 1'b0;
+  reg rst;
+  initial repeat(1000) #20 clk = ~clk;
+  
   initial begin
     rst = 1'b1;
-    clk = 1'b0;
-    #5
+    #100
     rst = 1'b0;
-    clk = !clk;
-    #5  clk = !clk;
-    #5  clk = !clk;
-    #5  clk = !clk;
-    #5  clk = !clk;
-    #5  clk = !clk;
-    #5  clk = !clk;
-    #5  clk = !clk;
-    #5  clk = !clk;
-    #5  clk = !clk;
   end
 
   TEST_MIPS mips(
