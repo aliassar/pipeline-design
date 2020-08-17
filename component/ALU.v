@@ -37,13 +37,13 @@ module ALU(
                 end
 			4'b0100:    //SUB
                 begin
-                    {cout, alu_out} = {alu_in1[31], alu_in1} - {alu_in2[31], alu_in2};
+                    {cout, alu_out} = alu_in1 - alu_in2[31];
                     v = ((alu_in1[31] == ~alu_in2[31]) & (alu_out[31] != alu_in1[31]));
                 end
 
 			4'b0101:    //SUBC
                 begin
-                    {cout, alu_out} = {alu_in1[31], alu_in1} - {alu_in2[31], alu_in2};
+                    {cout, alu_out} = alu_in1 - alu_in2[31];
                     v = ((alu_in1[31] == ~alu_in2[31]) & (alu_out[31] != alu_in1[31]));
                 end
                 
@@ -53,16 +53,6 @@ module ALU(
                 alu_out	 = 	alu_in1 | alu_in2;
 			4'b1000:    //XOR
                 alu_out	 = 	alu_in1 ^ alu_in2;
-			4'b1100: begin
-					{cout, alu_out} = {alu_in1[31], alu_in1} - {alu_in2[31], alu_in2};
-                    v = ((alu_in1[31] == ~alu_in2[31]) & (alu_out[31] != alu_in1[31]));
-				end
-			4'b1110:
-                alu_out	 = 	alu_in1 & alu_in2;
-			4'b1010:
-                alu_out	 = 	alu_in1 + alu_in2;
-			4'b1010:
-                alu_out	 = 	alu_in1 + alu_in2;
 		endcase
 	end
 

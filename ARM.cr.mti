@@ -51,13 +51,6 @@ Top level modules:
 	MUX4
 	MUX32
 
-} {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/ALU.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/ALU.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module ALU
-
-Top level modules:
-	ALU
-
 } {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/val2_generator.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/component/val2_generator.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module Val2Generator
@@ -85,6 +78,14 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 
 Top level modules:
 	Condition_Check
+
+} {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/test.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TEST_MIPS
+-- Compiling module Testing
+
+Top level modules:
+	Testing
 
 } {} {}} C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v {1 {vlog -work work C:/Users/amin/Desktop/darsi/Arch-Lab/ca-lab/stages/Instruction_Fetch.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
